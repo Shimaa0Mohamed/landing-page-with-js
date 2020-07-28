@@ -55,8 +55,10 @@ console.log('This code took ' + (endingTime1 - startingTime1) + ' milliseconds.'
 
 // build fixed navbar from existing sections
 const startingTime2 = performance.now();
+//create div to put navbar links on it
 const myCustomDiv = document.createElement('div');
 myCustomDiv.setAttribute("id", "navSections");
+//create links from currently exict sections that will scroll to it on clicking
 mainSections.forEach(link => {
     const newnav = document.createElement('li');
     let r = link.getAttribute("data-nav");
@@ -73,6 +75,8 @@ console.log('This code took ' + (endingTime2 - startingTime2) + ' milliseconds.'
 
 //make sections responsive to navbar
 const startingTime3 = performance.now();
+/*determine when section is on top of screen 
+then add class active to it and point to it in navbar*/
 document.addEventListener("scroll", function() {
     let fromTop = window.scrollY;
     let mainNavLinks = document.querySelectorAll("nav ul li a");
@@ -95,6 +99,7 @@ document.addEventListener("scroll", function() {
 const endingTime3 = performance.now();
 console.log('This code took ' + (endingTime3 - startingTime3) + ' milliseconds.');
 ////////////////////////////////////////////////////////////////
+//create toggle button to use in mobile mode
 const toggl = document.getElementById('toggle__button');
 const navToggl = document.getElementById('navSections');
 toggl.addEventListener("click", function() {
@@ -113,9 +118,10 @@ const startingTime4 = performance.now();
 
 function addContent() {
     let maxSections = document.querySelectorAll("main section").length;
+    //most number of sections allowed is 7
     if (maxSections == 7) {
         alert("max number of sections is 7");
-
+        //create new section on click if it less than 7
     } else {
         //CREATE NEW SECTION AND PUT IT IN MAIN
         let sectionCounter = document.querySelectorAll("main section").length + 1; //PUT NEW SECTION ID
@@ -141,6 +147,7 @@ function addContent() {
   Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.</p>
 </div>`
         mainn.appendChild(neww);
+        //create link to new section in navbar
         const newnav = document.createElement('li');
         newnav.innerHTML = `<a href="#${string}" class="menu__link" > <h3>${stringg}</h3></a>`;
         myCustomDiv.appendChild(newnav);
