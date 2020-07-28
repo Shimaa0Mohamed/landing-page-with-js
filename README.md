@@ -60,6 +60,7 @@ function removeContent() {
 - ### finally in mobile mode navbar will turn to toggle button 
 - ### navbar update automatically when add or remove section & also has built by js 
 - ### navbar disappear when scrolling and appear when you stop scrolling
+- ### perforn=mance calculated for most functions and events
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 ## How to run locally.
