@@ -45,6 +45,10 @@ h2 {
     color: #fff;
 }
 
+h3{
+    font-size: 1.2vw;
+}
+
 p {
     line-height: 1.6em;
     color: #eee;
@@ -65,17 +69,18 @@ section {
     min-height: 80vh;
 }
 
-
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
 .navbar__menu {
+    display: flex;
     white-space: nowrap;
     background: linear-gradient(0deg, rgba(136,203,171,0.2) 0%, rgba(0,13,60,0.1) 100%);
   }
 .navbar__menu ul {
+    display: flex;
+    width: 95%;
     list-style: none;
-    padding-left: 0;
     margin: 0;
     text-align: right;
 }
@@ -118,19 +123,87 @@ section {
     color: #fff;
 }
 
+.designer{
+    color: #09f7f78e;
+   
+   
+ }
+ .fa {
+    padding: 20px;
+    font-size: 1.5vw;
+    width: 1.5vw;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+ }
+ 
+ .fa:hover {
+     border: 1px solid rgba(243, 243, 243, 0.767);
+     opacity: 0.9;
+     transform: scale(1.1);
+     
+     
+     
+ }
+ 
+ .fa-facebook {
+    background: #3B5998;
+    color: white;
+    float: right;
+ }
+ 
+ .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    float: right;
+ }
+ 
+ .fa-google {
+    background: #dd4b39;
+    color: white;
+    float: right;
+ }
+ 
+ .fa-linkedin {
+    background: #007bb5;
+    color: white;
+    float: right;
+ }
+ 
+ .fa-youtube {
+    background: #bb0000;
+    color: white;
+    float: right;
+ }
+ 
+ .fa-instagram {
+    background: #125688;
+    color: white;
+    float: right;
+ }
+ #social-icons{
+    width: 100%; 
+    float: right;
+ 
+ }
+ #copy{
+    text-align: center;
+    margin-top: 15px;
+ }
+ #designed-by{
+    font-size: 1.25em;
+    font-family: 'Modak', cursive;
+ }
 
+/*end of footer style */
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
     padding: 1em;
     text-align: left;
 }
-@media (min-height: 300px) {/****************************************************************************************************/
-    .navbar__menu ul {
-      position: sticky;
-      top: 0;
-    }
-}
+
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
@@ -144,73 +217,73 @@ section:nth-of-type(even) .landing__container {
     text-align: right; 
 }
 
-/* Background Circles */
-/* Note that background circles are created with psuedo elements before and after */
-/* Circles appear to be random do to use of :nth-of-type psuedo class */
-section:nth-of-type(odd) .landing__container::before {
-    content: '';
-    background: rgba(255, 255, 255, 0.187);
-    position: absolute;
-    z-index: -5;
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(even) .landing__container::before {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    top: 3em;
-    right: 3em;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -5;
-    width: 10vh;
-    height: 10vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
-
-section:nth-of-type(3n + 1) .landing__container::after {
-    content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
-    position: absolute;
-    right: 20vw;
-    bottom: -5em;
-    z-index: -5;
-    width: 15vh;
-    height: 15vh;
-    border-radius: 50%;
-    opacity: 0;
-    transition: ease 0.5s all;
-}
+/*add content and remove content button */
 .buttons{
     float: left;
-    margin-left: 2%;
     margin-top: 1%;
 }
- li.button button{
+   button{
     border-radius: 25%;
+    cursor: pointer;
    
+}
+/* links to sections on navbar */
+#navSections{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+}
+/*button that will apear in mobile mode*/
+#toggle__button{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 21px;
+    margin-top: 1%;
+    margin-right: 5%;
+}
+#toggle__button .bar{
+    height: 50px;
+    width: 30px;
+    background-color:black;
+    border-radius: 27%;
+    font-size: 5px;
+    font-weight: 100;
+    margin-top: .8%;
+   
+}
+
+@media(max-width:600px){
+    h3{
+        font-size: .5em;
+        font-weight: bold;
+    }
+   #toggle__button{
+        display: flex;
+    }
+   #navSections{
+        display: none;
+    }
+    .navbar__menu{
+        flex-direction: column;
+        align-items: flex-start;
+        
+
+    }
+    .navbar__menu ul #navSections {
+        flex-direction: column;
+
+        
+    }
+    #navSections li{
+        text-align: center;
+    }
+    #navSections.activee{
+        display: flex;
+    }
+
 }
 
 
@@ -222,15 +295,6 @@ section.active {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
 
-section.your-active-class .landing__container::before {
-    opacity: 1;
-    animation: rotate 4s linear 0s infinite forwards;
-}
-
-section.your-active-class .landing__container::after {
-    opacity: 1;
-    animation: rotate 5s linear 0s infinite forwards reverse;
-}
 nav ul li a.active{
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
@@ -238,16 +302,3 @@ nav ul li a.active{
 }
 
 
-/* Section Active Styles Keyframe Animations */
-@keyframes rotate {
-	from {
-		transform: rotate(0deg)
-		           translate(-1em)
-		           rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg)
-		           translate(-1em) 
-		           rotate(-360deg);
-	}
-}
