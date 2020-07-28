@@ -3,7 +3,7 @@
 this progect is a landing page .. i used 3 languages to made it html , css , js  i design the page using html & css and js make the page responsive,dynamic &active
  this page consist of **_sections_**
  - ### you can add new section by click add section button that will add it by js function 
-##### "put remember most number allowed for sections is 7 "_
+##### "but remember most number allowed for sections is 7 "_
  ```
  function addContent() {
     let maxSections = document.querySelectorAll("main section").length;
